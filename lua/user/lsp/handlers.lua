@@ -88,12 +88,8 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
-	end
-	if client.name == "jsonls" then
-		client.resolved_capabilities.document_formatting = false
-	end
+	-- disable lsp format and use null_ls
+	client.resolved_capabilities.document_formatting = false
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd([[augroup Format]])
 		vim.cmd([[autocmd! * <buffer>]])
