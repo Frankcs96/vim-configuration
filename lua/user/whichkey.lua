@@ -127,6 +127,14 @@ local mappings = {
 			"Diff",
 		},
 	},
+	t = {
+		name = "Test",
+		n = { "<cmd>TestNearest<cr>", "Nearest" },
+		f = { "<cmd>TestFile<cr>", "File" },
+		s = { "<cmd>TestSuite<cr>", "Suite" },
+		l = { "<cmd>TestLast<cr>", "Last" },
+		v = { "<cmd>TestVisit<cr>", "Jump to last run test" },
+	},
 
 	l = {
 		name = "LSP",

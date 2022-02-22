@@ -58,10 +58,10 @@ return packer.startup(function(use)
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 
+	-- testing
+	use("janko/vim-test")
 	-- Colorschemes
-	use("folke/tokyonight.nvim")
-	use("lunarvim/darkplus.nvim")
-
+	use("joshdick/onedark.vim")
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
