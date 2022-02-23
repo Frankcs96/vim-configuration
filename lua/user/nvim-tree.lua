@@ -19,7 +19,6 @@ vim.g.nvim_tree_icons = {
 		symlink = "",
 	},
 }
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
 	return
@@ -31,7 +30,6 @@ if not config_status_ok then
 end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
-
 nvim_tree.setup({
 	disable_netrw = true,
 	hijack_netrw = true,
@@ -72,7 +70,7 @@ nvim_tree.setup({
 		custom = {},
 	},
 	git = {
-		enable = true,
+		enable = false,
 		ignore = false,
 		timeout = 500,
 	},
@@ -102,7 +100,7 @@ nvim_tree.setup({
 	disable_window_picker = 0,
 	root_folder_modifier = ":t",
 	show_icons = {
-		git = 1,
+		git = 0,
 		folders = 1,
 		files = 1,
 		folder_arrows = 1,

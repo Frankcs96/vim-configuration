@@ -61,7 +61,7 @@ return packer.startup(function(use)
 	-- testing
 	use("janko/vim-test")
 	-- Colorschemes
-	use({ "ellisonleao/gruvbox.nvim" })
+	use("sainnhe/sonokai")
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
