@@ -1,4 +1,2 @@
-vim.opt.termguicolors = true
-
-vim.cmd([[colorscheme sonokai]])
--- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+vim.g.vscode_style = "dark"
+vim.cmd([[colorscheme vscode]])
