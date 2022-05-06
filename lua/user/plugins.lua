@@ -55,6 +55,7 @@ return packer.startup(function(use)
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("goolord/alpha-nvim")
+	use("ellisonleao/gruvbox.nvim")
 	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 
@@ -82,6 +83,7 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope-ui-select.nvim")
 
 	-- Treesitter
 	use({
