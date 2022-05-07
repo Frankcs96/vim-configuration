@@ -133,3 +133,4 @@ Your mother was a hamster
 hjkl
 ¡¿?
 World of vimcraft
+All config written in LUA
