@@ -52,6 +52,7 @@ return packer.startup(function(use)
 	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
+	use("SmiteshP/nvim-gps")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("goolord/alpha-nvim")
@@ -63,6 +64,7 @@ return packer.startup(function(use)
 	use("janko/vim-test")
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")
+	use("lunarvim/darkplus.nvim")
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
 	use("hrsh7th/cmp-buffer") -- buffer completions
@@ -80,6 +82,7 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+	use("ray-x/lsp_signature.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
