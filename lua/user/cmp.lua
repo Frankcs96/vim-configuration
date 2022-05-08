@@ -21,7 +21,7 @@ local kind_icons = icons.kind
 
 cmp.setup({
 	window = {
-		documentation = false,
+		documentation = true,
 		border = { "‚ï≠", "‚îÄ", "‚ïÆ", "‚îÇ", "‚ïØ", "‚îÄ", "‚ï∞", "‚îÇ" },
 	},
 	snippet = {
