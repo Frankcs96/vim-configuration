@@ -46,7 +46,7 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
-  use("catppuccin/nvim")
+	use("catppuccin/nvim")
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("akinsho/bufferline.nvim")
@@ -60,7 +60,7 @@ return packer.startup(function(use)
 
 	-- testing
 	use("janko/vim-test")
-  use("ThePrimeagen/harpoon") -- I only use this one for test strategies with vim test
+	use("ThePrimeagen/harpoon") -- I only use this one for test strategies with vim test
 
 	-- Colorschemes
 	use("Mofiqul/vscode.nvim")

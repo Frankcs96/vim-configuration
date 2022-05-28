@@ -3,32 +3,30 @@ if not status_ok then
 	return
 end
 
-local function sayhi ()
-         print("hello")
-    end
+local function sayhi()
+	print("hello")
+end
 local function get_splash()
+	local file = io.open("/Users/franciscocarmona/.config/nvim/splashes.txt", "r")
+	local size = 0
+	local arr = {}
+	math.randomseed(os.time())
 
-local file = io.open("/Users/franciscocarmona/.config/nvim/splashes.txt", "r");
-local size = 0
-local arr = {}
-  math.randomseed(os.time())
+	for line in file:lines() do
+		size = size + 1
+		table.insert(arr, line)
+	end
+	local random = math.random(1, size)
 
- for line in file:lines() do
-   size = size + 1
-    table.insert(arr, line);
- end
-local random = math.random(1,size)
-
-return arr[random]
- end
+	return arr[random]
+end
 
 local splash = get_splash()
 
-
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
-  [[                                                 ]],
-  [[                                                 ]],
+	[[                                                 ]],
+	[[                                                 ]],
 	[[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
 	[[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
 	[[██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║]],
