@@ -64,9 +64,6 @@ nvim_tree.setup({
 	hijack_directories = {
 		enable = false,
 	},
-	update_to_buf_dir = {
-		enable = false,
-	},
 	ignore_ft_on_setup = {
 		"startify",
 		"dashboard",
