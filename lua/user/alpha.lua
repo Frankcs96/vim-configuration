@@ -3,18 +3,17 @@ if not status_ok then
 	return
 end
 
-local function sayhi()
-	print("hello")
-end
 local function get_splash()
 	local file = io.open("/Users/franciscocarmona/.config/nvim/splashes.txt", "r")
 	local size = 0
 	local arr = {}
 	math.randomseed(os.time())
 
-	for line in file:lines() do
-		size = size + 1
-		table.insert(arr, line)
+	if file then
+		for line in file:lines() do
+			size = size + 1
+			table.insert(arr, line)
+		end
 	end
 	local random = math.random(1, size)
 
