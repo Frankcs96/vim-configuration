@@ -1,33 +1,40 @@
+vim.g.catppuccin_flavour = "mocha"
 require("catppuccin").setup({
+	transparent_background = false,
+	term_colors = false,
+	compile = {
+		enabled = false,
+		path = vim.fn.stdpath "cache" .. "/catppuccin",
+	},
 	styles = {
-		comments = "italic",
-		conditionals = "italic",
-		loops = "NONE",
-		functions = "NONE",
-		keywords = "italic",
-		strings = "NONE",
-		variables = "NONE",
-		numbers = "NONE",
-		booleans = "NONE",
-		properties = "NONE",
-		types = "NONE",
-		operators = "NONE",
+		comments = { "italic" },
+		conditionals = { "italic" },
+		loops = {"italic"},
+		functions = {},
+		keywords = {"italic"},
+		strings = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
 	},
 	integrations = {
 		treesitter = true,
 		native_lsp = {
 			enabled = true,
 			virtual_text = {
-				errors = "italic",
-				hints = "italic",
-				warnings = "italic",
-				information = "italic",
+				errors = { "italic" },
+				hints = { "italic" },
+				warnings = { "italic" },
+				information = { "italic" },
 			},
 			underlines = {
-				errors = "underline",
-				hints = "underline",
-				warnings = "underline",
-				information = "underline",
+				errors = { "underline" },
+				hints = { "underline" },
+				warnings = { "underline" },
+				information = { "underline" },
 			},
 		},
 		coc_nvim = false,
@@ -36,16 +43,21 @@ require("catppuccin").setup({
 		lsp_saga = false,
 		gitgutter = false,
 		gitsigns = true,
+		leap = false,
 		telescope = true,
 		nvimtree = {
 			enabled = true,
 			show_root = true,
-			transparent_panel = true,
+			transparent_panel = false,
 		},
 		neotree = {
 			enabled = false,
-			show_root = false,
+			show_root = true,
 			transparent_panel = false,
+		},
+		dap = {
+			enabled = false,
+			enable_ui = false,
 		},
 		which_key = false,
 		indent_blankline = {
@@ -65,8 +77,15 @@ require("catppuccin").setup({
 		notify = true,
 		telekasten = true,
 		symbols_outline = true,
+		mini = false,
+		aerial = false,
+		vimwiki = true,
+		beacon = true,
 	},
+	color_overrides = {},
+	highlight_overrides = {},
 })
+
 vim.cmd([[set termguicolors]])
 vim.cmd([[colorscheme catppuccin]])
 vim.cmd([[hi CursorLine guibg=none]])

@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local function get_splash()
-	local file = io.open("/Users/franciscocarmona/.config/nvim/splashes.txt", "r")
+	local file = io.open("/Users/francisco/.config/nvim/splashes.txt", "r")
 	local size = 0
 	local arr = {}
 	math.randomseed(os.time())
