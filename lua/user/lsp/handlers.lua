@@ -93,7 +93,7 @@ M.on_attach = function(client, bufnr)
 	if client.resolved_capabilities.document_formatting then
 		vim.cmd([[augroup Format]])
 		vim.cmd([[autocmd! * <buffer>]])
-		vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]])
+		vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
 		vim.cmd([[augroup END]])
 	end
 	lsp_keymaps(bufnr)
@@ -108,5 +108,4 @@ if not status_ok then
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
 return M
