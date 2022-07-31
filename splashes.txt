@@ -25,6 +25,7 @@ Bring me 115
 Bring me blue pages
 Bring me red pages
 Btw I use Arch
+Btw I use vim
 Built from source
 Ceci n'est pas une dashboard
 Cor blimey mate
@@ -134,3 +135,4 @@ hjkl
 ¡¿?
 World of vimcraft
 All config written in LUA
+Better than Jetbrains
