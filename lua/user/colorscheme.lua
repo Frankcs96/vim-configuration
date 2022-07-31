@@ -4,14 +4,14 @@ require("catppuccin").setup({
 	term_colors = false,
 	compile = {
 		enabled = false,
-		path = vim.fn.stdpath "cache" .. "/catppuccin",
+		path = vim.fn.stdpath("cache") .. "/catppuccin",
 	},
 	styles = {
 		comments = { "italic" },
 		conditionals = { "italic" },
-		loops = {"italic"},
+		loops = { "italic" },
 		functions = {},
-		keywords = {"italic"},
+		keywords = { "italic" },
 		strings = {},
 		variables = {},
 		numbers = {},
