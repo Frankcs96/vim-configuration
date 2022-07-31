@@ -1,5 +1,8 @@
 ## Vim Configuration ⚙️
 
+![Conventional commits](https://github.com/Frankcs96/vim-configuration/actions/workflows/conventional-commits.yml/badge.svg)
+![Stylua formatter](https://github.com/Frankcs96/vim-configuration/actions/workflows/stylua.yml/badge.svg)
+
 This repo contains my neovim configuration. Feel free to use it or to add a PR for improvements.
 
 Everything is written in LUA 🌘
