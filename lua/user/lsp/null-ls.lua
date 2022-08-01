@@ -22,10 +22,12 @@ null_ls.setup({
 	end,
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettierd,
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.gofmt,
 		formatting.stylua,
 		formatting.google_java_format,
+		formatting.fixjson,
+		diagnostics.eslint_d,
 	},
 })
