@@ -11,6 +11,7 @@ local servers = {
 	"bashls",
 	"clangd",
 	"rust_analyzer",
+	"svelte",
 }
 
 local settings = {
