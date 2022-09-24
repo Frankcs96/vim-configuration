@@ -8,6 +8,12 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+-- Some projects don't use eslint so here you can add the name of the project to avoid eslint errors
+local eslint_ignored_projects = {
+	"m2h-amag-frontend",
+	"m2h-fuel-api",
+}
+
 null_ls.setup({
 
 	on_attach = function(client)
@@ -27,7 +33,11 @@ null_ls.setup({
 		formatting.gofmt,
 		formatting.stylua,
 		formatting.google_java_format,
-		formatting.fixjson,
-		diagnostics.eslint_d,
+		diagnostics.eslint_d.with({
+			condition = function()
+				-- if table do not contain the value we return true so the project will use eslint
+				return vim.tbl_contains(eslint_ignored_projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) == false
+			end,
+		}),
 	},
 })
