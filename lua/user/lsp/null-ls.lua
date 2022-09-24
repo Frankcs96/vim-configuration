@@ -12,6 +12,7 @@ local diagnostics = null_ls.builtins.diagnostics
 local eslint_ignored_projects = {
 	"m2h-amag-frontend",
 	"m2h-fuel-api",
+	"cdk",
 }
 
 null_ls.setup({
