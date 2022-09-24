@@ -11,6 +11,4 @@ Everything is written in LUA 🌘
 
 ## TODOS 📝
 
-- Use [SchemaStore.nvim](https://github.com/b0o/SchemaStore.nvim) so you don't have to add json schemas manually.
-
 - Refactor alpha.lua line 7, right now I'm using a hardcoded username so in the future if I use another one it will create errors (I always forget about this when using a new machine).
