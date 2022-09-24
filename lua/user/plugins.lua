@@ -54,7 +54,6 @@ return packer.startup(function(use)
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("goolord/alpha-nvim")
-	use("antoinemadec/FixCursorHold.nvim") -- This is needed to fix lsp doc highlight
 	use("folke/which-key.nvim")
 
 	-- testing
@@ -62,7 +61,6 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon") -- I only use this one for test strategies with vim test
 
 	-- Colorschemes
-	use("Mofiqul/vscode.nvim")
 	use("catppuccin/nvim")
 
 	-- cmp plugins
@@ -81,7 +79,6 @@ return packer.startup(function(use)
 	use("neovim/nvim-lspconfig") -- enable LSP
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
-	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("ray-x/lsp_signature.nvim")
 
@@ -102,7 +99,6 @@ return packer.startup(function(use)
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
-
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
