@@ -17,6 +17,7 @@ local function get_splash()
 	end
 	local random = math.random(1, size)
 
+	io.close(file)
 	return arr[random]
 end
 
