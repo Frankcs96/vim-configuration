@@ -61,7 +61,7 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon") -- I only use this one for test strategies with vim test
 
 	-- Colorschemes
-	use("catppuccin/nvim")
+	use("folke/tokyonight.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
