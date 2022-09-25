@@ -6,7 +6,6 @@ end
 local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
-
 local icons = require("user.icons")
 
 local diagnostics = {
@@ -64,13 +63,10 @@ local spaces = function()
 	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
--- TODO: find out what is overriding this
-vim.opt.laststatus = 3
-
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "tokyonight",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		-- disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "toggleterm" },
@@ -104,5 +100,3 @@ lualine.setup({
 	tabline = {},
 	extensions = {},
 })
-
-vim.opt.laststatus = 3
