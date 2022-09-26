@@ -88,7 +88,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-	-- disable lsp format and use null_ls TODO: change to new way with neovim 0.8 in the future
 	client.resolved_capabilities.document_formatting = false
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)

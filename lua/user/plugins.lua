@@ -82,6 +82,8 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 	use("ray-x/lsp_signature.nvim")
 	use("b0o/schemastore.nvim")
+	--jova
+	use("mfussenegger/nvim-jdtls")
 
 	-- Debugging
 	use("mfussenegger/nvim-dap")
