@@ -27,7 +27,7 @@ else
 end
 
 -- Find root of project
-local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
+local root_markers = { ".git", "mvnw", "gradlew", "pom.xml" }
 local root_dir = require("jdtls.setup").find_root(root_markers)
 if root_dir == "" then
 	return
@@ -117,11 +117,11 @@ local config = {
 	-- for a list of options
 	settings = {
 		java = {
-			jdt = {
-				ls = {
-					vmargs = "-XstartOnFirstThread",
-				},
-			},
+			--[[ jdt = { ]]
+			--[[ 	ls = { ]]
+			--[[ 		vmargs = "-XstartOnFirstThread", ]]
+			--[[ 	}, ]]
+			--[[ }, ]]
 			eclipse = {
 				downloadSources = true,
 			},
@@ -201,7 +201,13 @@ config["on_attach"] = function(client, bufnr)
 	-- you make during a debug session immediately.
 	-- Remove the option if you do not want that.
 	require("jdtls.dap").setup_dap_main_class_configs()
-	require("jdtls").setup_dap({ hotcodereplace = "auto" })
+	require("jdtls").setup_dap({
+		--[[ config_overrides = { ]]
+		--[[ 	vmArgs = "-XstartOnFirstThread", ]]
+		--[[ }, ]]
+		-- this is the way of adding vmargs to debugger
+		hotcodereplace = "auto",
+	})
 end
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
