@@ -6,6 +6,7 @@ local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
 	return
 end
+
 capabilities.textDocument.completion.completionItem.snippetSupport = false
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
@@ -103,7 +104,7 @@ local config = {
 		workspace_dir,
 	},
 
-	on_attach = require("user.lsp.handlers").on_attach,
+	--[[ on_attach = require("user.lsp.handlers").on_attach, ]]
 	capabilities = capabilities,
 
 	-- 💀
@@ -196,10 +197,11 @@ local config = {
 		bundles = bundles,
 	},
 }
+
 config["on_attach"] = function(client, bufnr)
-	-- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
-	-- you make during a debug session immediately.
-	-- Remove the option if you do not want that.
+	--[[ client.resolved_capabilities.document_formatting = false ]]
+	--[[ require("user.keymaps").lsp_keymaps(bufnr) ]]
+	--[[ require("user.autocommands").lsp_highlight_document(client) ]]
 	require("jdtls.dap").setup_dap_main_class_configs()
 	require("jdtls").setup_dap({
 		--[[ config_overrides = { ]]
@@ -208,12 +210,10 @@ config["on_attach"] = function(client, bufnr)
 		-- this is the way of adding vmargs to debugger
 		hotcodereplace = "auto",
 	})
+	require("user.lsp.handlers").on_attach(client, bufnr)
 end
--- This starts a new client & server,
--- or attaches to an existing client & server depending on the `root_dir`.
-jdtls.start_or_attach(config)
 
--- require('jdtls').setup_dap()
+jdtls.start_or_attach(config)
 
 vim.cmd(
 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
@@ -272,6 +272,3 @@ local vmappings = {
 
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
-
--- debugging
--- git clone git@github.com:microsoft/java-debug.git

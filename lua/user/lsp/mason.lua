@@ -64,6 +64,7 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "jdtls" then
+		-- Java is the special kid so we do not use regular lsp for it, java.lua
 		goto continue
 	end
 
