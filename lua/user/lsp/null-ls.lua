@@ -16,21 +16,10 @@ local eslint_ignored_projects = {
 }
 
 null_ls.setup({
-
-	on_attach = function(client)
-		if client.resolved_capabilities.document_formatting then
-			vim.cmd([[
-            augroup LspFormatting
-                autocmd! * <buffer>
-                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-            augroup END
-            ]])
-		end
-	end,
-	debug = false,
+	debug = true,
 	sources = {
 		formatting.prettierd,
-		formatting.black.with({ extra_args = { "--fast" } }),
+  	formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.gofmt,
 		formatting.stylua,
 		formatting.google_java_format,

@@ -49,7 +49,6 @@ M.setup = function()
 end
 
 M.on_attach = function(client, bufnr)
-	client.resolved_capabilities.document_formatting = false
 	require("user.keymaps").lsp_keymaps(bufnr)
 	require("user.autocommands").lsp_highlight_document(client)
 end
