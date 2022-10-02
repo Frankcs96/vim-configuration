@@ -19,7 +19,7 @@ null_ls.setup({
 	debug = true,
 	sources = {
 		formatting.prettierd,
-  	formatting.black.with({ extra_args = { "--fast" } }),
+		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.gofmt,
 		formatting.stylua,
 		formatting.google_java_format,

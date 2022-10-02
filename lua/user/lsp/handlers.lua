@@ -51,18 +51,17 @@ M.setup = function()
 end
 
 local function attach_navic(client, bufnr)
-  -- vim.g.navic_silence = true
-  local navic_status_ok, navic = pcall(require, "nvim-navic")
-  if not navic_status_ok then
-    return
-  end
-  navic.attach(client, bufnr)
+	-- vim.g.navic_silence = true
+	local navic_status_ok, navic = pcall(require, "nvim-navic")
+	if not navic_status_ok then
+		return
+	end
+	navic.attach(client, bufnr)
 end
 
 M.on_attach = function(client, bufnr)
 	require("user.keymaps").lsp_keymaps(bufnr)
-  attach_navic(client, bufnr)
+	attach_navic(client, bufnr)
 end
-
 
 return M
