@@ -199,9 +199,6 @@ local config = {
 }
 
 config["on_attach"] = function(client, bufnr)
-	--[[ client.resolved_capabilities.document_formatting = false ]]
-	--[[ require("user.keymaps").lsp_keymaps(bufnr) ]]
-	--[[ require("user.autocommands").lsp_highlight_document(client) ]]
 	require("jdtls.dap").setup_dap_main_class_configs()
 	require("jdtls").setup_dap({
 		--[[ config_overrides = { ]]
