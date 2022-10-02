@@ -31,13 +31,7 @@ keymap("n", "<A-Down>", ":resize +2<CR>", opts)
 keymap("n", "<A-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<A-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<TAB>", ":bnext<CR>", opts)
-keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
 
--- -- Move text up and down
--- keymap("n", "<A-j>", "<Esc>:m .+1<CR>==", opts)
--- keymap("n", "<A-k>", "<Esc>:m .-2<CR>==", opts)
 
 -- Insert --
 -- Press jk fast to enter

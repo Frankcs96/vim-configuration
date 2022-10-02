@@ -48,7 +48,6 @@ return packer.startup(function(use)
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
-	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	use("ahmedkhalf/project.nvim")
@@ -56,6 +55,7 @@ return packer.startup(function(use)
 	use("goolord/alpha-nvim")
 	use("folke/which-key.nvim")
 	use("RRethy/vim-illuminate") -- replacing autocommand
+	use("SmiteshP/nvim-navic")
 
 	-- testing
 	use("janko/vim-test")

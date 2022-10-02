@@ -6,7 +6,9 @@ local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
 	return
 end
-M.capabilities.textDocument.completion.completionItem.snippetSupport = false
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
@@ -48,10 +50,19 @@ M.setup = function()
 	})
 end
 
-M.on_attach = function(client, bufnr)
-	require("user.keymaps").lsp_keymaps(bufnr)
+local function attach_navic(client, bufnr)
+  -- vim.g.navic_silence = true
+  local navic_status_ok, navic = pcall(require, "nvim-navic")
+  if not navic_status_ok then
+    return
+  end
+  navic.attach(client, bufnr)
 end
 
-M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
+M.on_attach = function(client, bufnr)
+	require("user.keymaps").lsp_keymaps(bufnr)
+  attach_navic(client, bufnr)
+end
+
 
 return M
