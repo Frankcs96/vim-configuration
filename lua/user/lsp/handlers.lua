@@ -50,7 +50,6 @@ end
 
 M.on_attach = function(client, bufnr)
 	require("user.keymaps").lsp_keymaps(bufnr)
-	require("user.autocommands").lsp_highlight_document(client)
 end
 
 M.capabilities = cmp_nvim_lsp.update_capabilities(M.capabilities)
