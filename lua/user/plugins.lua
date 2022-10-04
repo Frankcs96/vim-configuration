@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use("goolord/alpha-nvim")
   use("folke/which-key.nvim")
   use("RRethy/vim-illuminate") -- replacing autocommand
+  use("akinsho/bufferline.nvim")
 
   -- testing
   use("janko/vim-test")

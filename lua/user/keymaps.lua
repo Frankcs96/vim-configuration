@@ -40,6 +40,10 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Navigate buffers
+keymap("n", "<TAB>", ":bnext<CR>", opts)
+keymap("n", "<S-TAB>", ":bprevious<CR>", opts)
+
 -- Move text up and down
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
