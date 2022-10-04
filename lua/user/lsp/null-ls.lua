@@ -3,6 +3,8 @@ if not null_ls_status_ok then
   return
 end
 
+local M = {}
+
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -13,6 +15,12 @@ local eslint_ignored_projects = {
   "m2h-amag-frontend",
   "m2h-fuel-api",
   "cdk",
+}
+
+-- add the lsp servers that you want to do the formatting
+-- I will try always to use null-ls for formatting but if null-ls don't have a formatter I will add the lsp server to the list
+local formatters_to_use = {
+  "null-ls",
 }
 
 null_ls.setup({
@@ -31,3 +39,15 @@ null_ls.setup({
     }),
   },
 })
+
+M.lsp_formatting = function()
+  vim.lsp.buf.format({
+    filter = function(client)
+      if vim.tbl_contains(formatters_to_use, client.name) then
+        return true
+      end
+    end,
+  })
+end
+
+return M

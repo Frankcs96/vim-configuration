@@ -161,7 +161,8 @@ local mappings = {
       "<cmd>Telescope diagnostics<cr>",
       "Document Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+    f = { "<cmd>lua require('user.lsp.null-ls').lsp_formatting()<cr>", "Format" },
+
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {
