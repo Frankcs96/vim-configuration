@@ -40,12 +40,12 @@ null_ls.setup({
   },
 })
 
+-- This function will format the code using the formatters in the `formatters_to_use` table
+-- Always try to use null-ls but if a language is not supported by it add the lsp to the table
 M.lsp_formatting = function()
   vim.lsp.buf.format({
     filter = function(client)
-      if vim.tbl_contains(formatters_to_use, client.name) then
-        return true
-      end
+      return vim.tbl_contains(formatters_to_use, client.name)
     end,
   })
 end
