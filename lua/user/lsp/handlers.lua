@@ -61,6 +61,7 @@ end
 
 M.on_attach = function(client, bufnr)
   require("user.keymaps").lsp_keymaps(bufnr)
+  require("user.lsp.null-ls").activate_format_on_save()
   attach_navic(client, bufnr)
 end
 

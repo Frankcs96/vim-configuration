@@ -50,4 +50,12 @@ M.lsp_formatting = function()
   })
 end
 
+M.activate_format_on_save = function()
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+      M.lsp_formatting()
+    end,
+  })
+end
+
 return M
