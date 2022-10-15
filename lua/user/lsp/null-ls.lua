@@ -21,6 +21,7 @@ local eslint_ignored_projects = {
 -- I will try always to use null-ls for formatting but if null-ls don't have a formatter I will add the lsp server to the list
 local formatters_to_use = {
   "null-ls",
+  "svelte",
 }
 
 null_ls.setup({
