@@ -114,6 +114,9 @@ dap.configurations.typescript = {
     args = { "--inspect", "${file}" },
     sourceMaps = true,
     skipFiles = { "<node_internals>/**", "node_modules/**" },
+    env = {
+      NODE_ENV = "test",
+    },
   },
   {
     name = "Jest (Node2 with ts-node)",
