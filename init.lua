@@ -1,4 +1,4 @@
-require("user.impatient")
+require("impatient") -- always at the top for faster startup time
 require("user.options")
 require("user.plugins")
 require("user.keymaps")
