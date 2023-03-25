@@ -22,6 +22,7 @@ local eslint_ignored_projects = {
 local formatters_to_use = {
   "null-ls",
   "svelte",
+  "clangd",
 }
 
 null_ls.setup({
