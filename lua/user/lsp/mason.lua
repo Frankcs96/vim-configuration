@@ -13,6 +13,7 @@ local servers = {
   "rust_analyzer",
   "svelte",
   "taplo",
+  "cssls",
 }
 
 local settings = {
