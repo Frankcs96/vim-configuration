@@ -7,15 +7,6 @@ local M = {}
 
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-local diagnostics = null_ls.builtins.diagnostics
-
--- Some projects don't use eslint so here you can add the name of the project to avoid eslint errors
-local eslint_ignored_projects = {
-  "m2h-amag-frontend",
-  "m2h-fuel-api",
-  "cdk",
-}
 
 -- add the lsp servers that you want to do the formatting
 -- I will try always to use null-ls for formatting but if null-ls don't have a formatter I will add the lsp server to the list
@@ -34,12 +25,6 @@ null_ls.setup({
     formatting.stylua,
     formatting.google_java_format,
     formatting.rustfmt,
-    diagnostics.eslint_d.with({
-      condition = function()
-        -- if table do not contain the value we return true so the project will use eslint
-        return vim.tbl_contains(eslint_ignored_projects, vim.fn.fnamemodify(vim.fn.getcwd(), ":t")) == false
-      end,
-    }),
   },
 })
 

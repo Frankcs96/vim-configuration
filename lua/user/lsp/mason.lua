@@ -14,6 +14,7 @@ local servers = {
   "svelte",
   "taplo",
   "cssls",
+  "eslint",
 }
 
 local settings = {
