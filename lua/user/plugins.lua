@@ -46,11 +46,11 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim") -- Useful lua functions used by lots of plugins
   use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
   use("numToStr/Comment.nvim") -- Easily comment stuff
+  use("echasnovski/mini.icons")
   use("kyazdani42/nvim-web-devicons")
   use("kyazdani42/nvim-tree.lua")
   use("moll/vim-bbye")
   use("nvim-lualine/lualine.nvim")
-  use("lewis6991/impatient.nvim")
   use("goolord/alpha-nvim")
   use("folke/which-key.nvim")
   use("RRethy/vim-illuminate") -- replacing autocommand
@@ -71,15 +71,18 @@ return packer.startup(function(use)
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp")
 
-  -- snippets
-  use("L3MON4D3/LuaSnip") --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+  -- snippets
+  use({
+    "L3MON4D3/LuaSnip",
+    run = "make install_jsregexp",
+  }) --snippet engine
 
   -- LSP
   use("neovim/nvim-lspconfig") -- enable LSP
   use("williamboman/mason.nvim")
   use("williamboman/mason-lspconfig.nvim")
-  use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+  use("nvimtools/none-ls.nvim") -- for formatters and linters
   use("ray-x/lsp_signature.nvim")
   use("b0o/schemastore.nvim")
   --jova

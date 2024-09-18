@@ -38,6 +38,9 @@ local options = {
 }
 
 vim.opt.shortmess:append("c")
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 for k, v in pairs(options) do
   vim.opt[k] = v

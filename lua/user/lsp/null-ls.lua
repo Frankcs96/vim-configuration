@@ -24,7 +24,6 @@ null_ls.setup({
     formatting.gofmt,
     formatting.stylua,
     formatting.google_java_format,
-    formatting.rustfmt,
   },
 })
 

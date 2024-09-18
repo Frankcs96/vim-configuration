@@ -20,3 +20,6 @@ comment.setup({
     })
   end,
 })
+-- Delete this keymaps so do not overlap in which key
+vim.keymap.del("n", "gbc")
+vim.keymap.del("n", "gc")
