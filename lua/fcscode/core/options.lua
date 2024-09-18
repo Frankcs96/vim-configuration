@@ -1,0 +1,23 @@
+local opt = vim.opt
+opt.relativenumber = true
+opt.number = true
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
+opt.wrap = false
+opt.ignorecase = true
+opt.smartcase = true
+opt.cursorline = false
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
+opt.backspace = "indent,eol,start"
+opt.clipboard:append("unnamedplus")
+opt.splitright = true -- split vertical window to the right
+opt.splitbelow = true -- split horizontal window to the bottom
+opt.undofile = true -- enable persistent undo
+opt.swapfile = false
+opt.laststatus = 3
+opt.showmode = false
+opt.fillchars = "eob: "

@@ -1,8 +1,6 @@
-nvim
-lsp
+config
+TODO
 neovim
 conf
-TODOS
-json
-hardcoded
-lua
+config
+Stylua
