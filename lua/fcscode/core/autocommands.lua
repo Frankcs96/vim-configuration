@@ -16,14 +16,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  callback = function()
-    vim.cmd([[
-      if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-    ]])
-  end,
-})
-
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
     vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
@@ -37,15 +29,15 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 --   end,
 -- })
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  callback = function()
-    vim.cmd("hi link illuminatedWord LspReferenceText")
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+--   callback = function()
+--     vim.cmd("hi link illuminatedWord LspReferenceText")
+--   end,
+-- })
 
--- Optionally trigger diagnostics on relevant text changes and cursor movement
-vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "CursorHold" }, {
-  callback = function()
-    vim.diagnostic.setloclist({ open = false }) -- Automatically update diagnostics and loclist
-  end,
-})
+-- -- Optionally trigger diagnostics on relevant text changes and cursor movement
+-- vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI", "CursorHold" }, {
+--   callback = function()
+--     vim.diagnostic.setloclist({ open = false }) -- Automatically update diagnostics and loclist
+--   end,
+-- })

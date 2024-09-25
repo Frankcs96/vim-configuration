@@ -9,6 +9,9 @@ return {
     custom_iceberk_dark.inactive.a.bg = nil
     custom_iceberk_dark.inactive.b.bg = nil
     custom_iceberk_dark.inactive.c.bg = nil
+    custom_iceberk_dark.normal.a.fg = "#be8c8c"
+    custom_iceberk_dark.insert.a.fg = "#be8c8c"
+    custom_iceberk_dark.visual.a.fg = "#be8c8c"
     custom_iceberk_dark.normal.a.bg = nil
     custom_iceberk_dark.normal.b.bg = nil
     custom_iceberk_dark.normal.c.bg = nil
