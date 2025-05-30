@@ -2,10 +2,8 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    vim.cmd([[
-  highlight! StatusLine guibg=NONE ctermbg=NONE
-  highlight! StatusLineNC guibg=NONE ctermbg=NONE
-  ]]) --[[ this makes statusline transparent ]]
+    vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", ctermbg = "NONE" })
+    vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", ctermbg = "NONE" })
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 

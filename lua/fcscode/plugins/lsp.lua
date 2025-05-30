@@ -15,24 +15,9 @@ return {
     "hrsh7th/cmp-nvim-lsp",
   },
   config = function()
-    local function rounded_border()
-      return {
-        { "╭", "FloatBorder" },
-        { "─", "FloatBorder" },
-        { "╮", "FloatBorder" },
-        { "│", "FloatBorder" },
-        { "╯", "FloatBorder" },
-        { "─", "FloatBorder" },
-        { "╰", "FloatBorder" },
-        { "│", "FloatBorder" },
-      }
-    end
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
       callback = function(event)
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-          border = rounded_border(),
-        })
         local map = function(keys, func, desc, mode)
           mode = mode or "n"
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
@@ -45,6 +30,9 @@ return {
         map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
         map("<leader>la", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
         map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+        map("K", function()
+          vim.lsp.buf.hover({ border = "rounded" })
+        end, "Hover Documentation")
       end,
     })
 
