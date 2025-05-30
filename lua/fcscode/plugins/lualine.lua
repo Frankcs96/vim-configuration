@@ -2,6 +2,10 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
+    vim.cmd([[
+  highlight! StatusLine guibg=NONE ctermbg=NONE
+  highlight! StatusLineNC guibg=NONE ctermbg=NONE
+  ]]) --[[ this makes statusline transparent ]]
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
@@ -26,7 +30,6 @@ return {
     lualine.setup({
       options = {
         theme = custom_iceberk_dark,
-        disabled_filetypes = { "alpha", "dashboard" },
       },
       sections = {
         lualine_x = {

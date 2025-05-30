@@ -21,3 +21,4 @@ opt.swapfile = false
 opt.laststatus = 3
 opt.showmode = false
 opt.fillchars = "eob: "
+opt.showtabline = 0

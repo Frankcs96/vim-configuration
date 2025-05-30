@@ -33,7 +33,8 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { "stylua" },
       -- Conform can also run multiple formatters sequentially
-      javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascript = { "biome-check", "prettierd", "prettier", stop_after_first = true },
+      -- typescript = { "biome-check", "prettierd", "prettier", stop_after_first = true },
       typescript = { "prettierd", "prettier", stop_after_first = true },
       markdown = { "prettierd", stop_after_first = true },
     },
