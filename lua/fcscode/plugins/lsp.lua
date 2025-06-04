@@ -41,7 +41,6 @@ return {
 
     local servers = {
       ts_ls = {},
-      marksman = {},
       lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
@@ -63,7 +62,6 @@ return {
     vim.list_extend(ensure_installed, {
       "stylua", -- Used to format Lua code
       "prettierd",
-      "markdownlint",
       "eslint_d",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -78,4 +76,17 @@ return {
       },
     })
   end,
+
+  vim.diagnostic.config({
+    signs = true,
+    underline = true,
+    virtual_text = false,
+    virtual_lines = false,
+    update_in_insert = true,
+    float = {
+      -- UI.
+      border = "rounded",
+      focusable = true,
+    },
+  }),
 }
