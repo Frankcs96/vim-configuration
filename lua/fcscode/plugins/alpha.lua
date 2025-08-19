@@ -4,7 +4,8 @@ return {
   config = function()
     local function get_splash()
       local user = os.getenv("USER")
-      local path = string.format("/Users/%s/.config/nvim/assets/splashes.txt", user)
+      local home = os.getenv("HOME")
+      local path = home .. "/.config/nvim/assets/splashes.txt"
       local file = io.open(path, "r")
       local size = 0
       local arr = {}
