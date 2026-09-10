@@ -1,6 +1,6 @@
 return {
   "stevearc/oil.nvim",
-  opts = {},
+  opts = { float = { border = "rounded" } },
 
   keys = {
     {

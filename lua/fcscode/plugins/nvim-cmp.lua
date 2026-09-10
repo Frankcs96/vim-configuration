@@ -21,10 +21,15 @@ return { -- Autocompletion
     local luasnip = require("luasnip")
     luasnip.config.setup({})
 
+    -- float background inside the border, so it matches the other popups
+    local bordered = cmp.config.window.bordered({
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+    })
+
     cmp.setup({
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = bordered,
+        documentation = bordered,
       },
       snippet = {
         expand = function(args)
